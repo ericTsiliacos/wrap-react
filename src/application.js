@@ -1,4 +1,4 @@
-import {React} from './render'
+import React from './react'
 
 export default function({count}) {
   return (

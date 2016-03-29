@@ -1,2 +1,2 @@
 import Channel from 'async-csp';
-export default Channel;
+export default Channel

@@ -1,11 +1,7 @@
 import Application from './application';
-import {renderReactComponent} from './render';
+import React from './react';
 
-async function render(view, state, update) {
-  render(view, update(state, await renderReactComponent(view, state)), update);
-}
-
-render(Application, {count: 0}, (state, {action, id}) => ({
+new React(Application).fold({count: 0}, (state, {action, target, value}) => ({
   count:
     id === 'increment' ? state.count + 1 :
     id === 'decrement' ? state.count - 1 :
