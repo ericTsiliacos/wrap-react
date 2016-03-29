@@ -1,4 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import Application from './application';
+import {renderReactComponent} from './render';
 
-ReactDOM.render(<h1>Hello World</h1>, window.container);
+async function render(view, state, update) {
+  render(view, update(state, await renderReactComponent(view, state)), update);
+}
+
+render(Application, {count: 0}, (state, {action, id}) => ({
+  count:
+    id === 'increment' ? state.count + 1 :
+    id === 'decrement' ? state.count - 1 :
+    state.count
+}));

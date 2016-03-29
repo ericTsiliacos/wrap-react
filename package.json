@@ -4,6 +4,12 @@
   "scripts": {
     "start": "webpack --watch src/index.js dist.js"
   },
+  "dependencies": {
+    "async-csp": "^0.4.0",
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7",
+    "esnext-async": "0.0.1"
+  },
   "devDependencies": {
     "babel": "^6.5.2",
     "babel-core": "^6.7.4",
@@ -25,9 +31,5 @@
       "transform-decorators-legacy",
       "transform-runtime"
     ]
-  },
-  "dependencies": {
-    "react": "^0.14.7",
-    "react-dom": "^0.14.7"
   }
 }
